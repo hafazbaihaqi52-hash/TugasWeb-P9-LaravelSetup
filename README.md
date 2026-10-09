@@ -2,10 +2,12 @@
 
 ## Identitas
 
-**Nama:** Muhammad Hafaz Baihaqi  
-**Mata Kuliah:** Pemrograman Web  
-**Framework:** Laravel 13  
-**Database:** MySQL  
+| | |
+|---|---|
+| **Nama** | Muhammad Hafaz Baihaqi |
+| **Mata Kuliah** | Pemrograman Web |
+| **Framework** | Laravel 13 |
+| **Database** | MySQL |
 
 ---
 
@@ -13,7 +15,16 @@
 
 Project ini dibuat untuk memenuhi Tugas Web Pertemuan 9 mengenai setup dan penggunaan dasar Laravel.
 
-Project mencakup pembuatan project Laravel, konfigurasi database MySQL, migration, routing, Blade View, Controller, Model, serta route dengan parameter.
+Cakupan project:
+
+- Pembuatan project Laravel
+- Konfigurasi database MySQL
+- Migration
+- Routing
+- Blade View
+- Controller
+- Model
+- Route dengan parameter
 
 ---
 
@@ -31,80 +42,88 @@ Project mencakup pembuatan project Laravel, konfigurasi database MySQL, migratio
 
 ## Cara Menjalankan Project
 
-Cara Menjalankan Project
-1. Clone atau buka project
+### 1. Clone atau buka project
 
-Project diletakkan pada folder:
+Letakkan project pada folder:
 
+```
 C:\xampp0\htdocs\TugasWeb-P9-LaravelSetup
+```
 
-2. Install dependency
+### 2. Install dependency
 
-Jalankan:
-
+```bash
 composer install
-3. Konfigurasi file environment
+```
 
-Buat file .env berdasarkan .env.example, kemudian sesuaikan konfigurasi database.
+### 3. Konfigurasi file environment
 
-Contoh:
+Buat file `.env` berdasarkan `.env.example`, lalu sesuaikan konfigurasi database:
 
+```env
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=tugas_p9
 DB_USERNAME=root
 DB_PASSWORD=
-4. Generate application key
+```
+
+### 4. Generate application key
+
+```bash
 php artisan key:generate
-5. Jalankan migration
+```
+
+### 5. Jalankan migration
+
+```bash
 php artisan migrate
-6. Jalankan server Laravel
+```
+
+### 6. Jalankan server Laravel
+
+```bash
 php artisan serve
+```
 
-Kemudian buka:
+Kemudian buka di browser: <http://127.0.0.1:8000>
 
-http://127.0.0.1:8000
+---
 
-Route yang Digunakan
-Halaman Utama
-/
+## Route yang Digunakan
 
-Menampilkan halaman utama Laravel dengan data yang diberikan dari route.
+| Route | Keterangan |
+|---|---|
+| `/` | Halaman utama Laravel dengan data yang diberikan dari route |
+| `/about` | Halaman About menggunakan Blade View dan Controller |
+| `/contact` | Halaman Contact menggunakan Blade View dan Controller |
+| `/hello/{nama}` | **Bonus:** route parameter untuk menampilkan nama secara dinamis |
 
-About
-/about
+Contoh: `/hello/Hafaz`
 
-Menampilkan halaman About menggunakan Blade View dan Controller.
+---
 
-Contact
-/contact
+## Database
 
-Menampilkan halaman Contact menggunakan Blade View dan Controller.
+Nama database: `tugas_p9`
 
-Bonus Route
-/hello/{nama}
+Salah satu migration yang dibuat adalah tabel `products` dengan struktur:
 
-Route parameter yang digunakan untuk menampilkan nama secara dinamis.
+| Kolom | Keterangan |
+|---|---|
+| `id` | Primary key |
+| `name` | Nama produk |
+| `price` | Harga produk |
+| `description` | Deskripsi produk |
+| `created_at` | Waktu dibuat |
+| `updated_at` | Waktu diperbarui |
 
-Contoh:
+---
 
-/hello/Hafaz
-Database
+## Struktur Folder Utama
 
-Database yang digunakan:
-
-tugas_p9
-
-Salah satu migration yang dibuat adalah tabel products dengan struktur:
-
-id
-name
-price
-description
-created_at
-updated_at
-Struktur Folder Utama
+```
 TugasWeb-P9-LaravelSetup/
 │
 ├── app/
@@ -113,9 +132,7 @@ TugasWeb-P9-LaravelSetup/
 │   └── Models/
 │
 ├── bootstrap/
-│
 ├── config/
-│
 ├── database/
 │   └── migrations/
 │
@@ -128,7 +145,6 @@ TugasWeb-P9-LaravelSetup/
 │   └── web.php
 │
 ├── storage/
-│
 ├── tests/
 │
 ├── .env
@@ -136,21 +152,24 @@ TugasWeb-P9-LaravelSetup/
 ├── artisan
 ├── composer.json
 └── README.md
-Konsep yang Dipelajari
+```
 
-Project ini menerapkan beberapa konsep dasar Laravel:
+---
 
-Routing
-Blade View
-Controller
-Model
-Migration
-Konfigurasi database
-Artisan
-Route parameter
-Struktur MVC
-Repository
+## Konsep yang Dipelajari
 
-Repository GitHub:
+- Routing
+- Blade View
+- Controller
+- Model
+- Migration
+- Konfigurasi database
+- Artisan
+- Route parameter
+- Struktur MVC
 
-TugasWeb-P9-LaravelSetup
+---
+
+## Repository
+
+GitHub: **TugasWeb-P9-LaravelSetup**
